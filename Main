@@ -1,0 +1,53 @@
+package Unidad1;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    
+    public static void main (String []args){
+        
+    Scanner entrada = new Scanner (System.in);
+    
+    String Aux;
+    int a=1, Num;
+    String Arreglo[], Dato;
+    List <String> Lista = new ArrayList<String>();
+    
+    System.out.println("Ingresa la longitud de tu areglo");
+    Num = entrada.nextInt();
+    Arreglo = new String [Num];
+        
+    for(int i=0; i<Num; i++) {
+        System.out.println("Ingresa el dato "+ (i+1));
+        Arreglo [i] = entrada.next();
+    }
+    System.out.println("");
+    System.out.println("Tu Arreglo contiene los siguientes Datos: ");
+    for(int i=0; i<Num; i++) {
+        System.out.println("Dato "+ (i+1) + ": "+Arreglo [i]);
+    }
+    System.out.println("");
+        
+    for(int i=0; i<Num; i++){
+        Lista.add("");
+    }
+    for(int i=0; i<Num; i++){
+        Lista.set(i, Arreglo[i]);
+    }
+    
+    System.out.println("Pasamos los datos a una lista");
+    while(a==1){
+        System.out.println("¿Deceas ingresar mas datos en la lista 1:Si 2:No?");
+        a = entrada.nextInt();
+        if(a==1) {
+            System.out.println("Ingresa algun dato");
+            Dato = entrada.next();
+            Lista.add(Dato);
+        }
+    }
+    System.out.println("tu lista quedo de la siguiente manera");
+    System.out.println(Lista);
+    }
+}
